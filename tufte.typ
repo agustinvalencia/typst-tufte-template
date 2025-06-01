@@ -16,9 +16,11 @@
 #let narrow(content) = block(width: 70%, content)
 
 #let abstractblock(abstract) = context {
-  v(1cm)
-  par(justify: true, text(abstract))
-  v(1cm)
+  block(inset: (left: 1cm, right: 1cm))[
+    #v(1cm)
+    #par(justify: true, text(abstract))
+    #v(1cm)
+  ]
 }
 
 #let tufte(

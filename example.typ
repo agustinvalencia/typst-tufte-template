@@ -13,8 +13,13 @@
       affiliation: "Institute",
       email: "name.lastname@institute.com",
     ),
+    (
+      name: "Name Lastname",
+      affiliation: "Institute",
+      email: "name.lastname@institute.com",
+    ),
   ),
-  abstract: lorem(100),
+  abstract: lorem(60),
 )
 
 = Introduction
@@ -29,13 +34,19 @@ $
   &= (n(n+1)) / 2
 $
 
-#lorem(50)
+#narrow[
+  #lorem(30)
+  #note[#lorem(20)
+    `Dictionary<waton> https://www.google.com`]
+  #lorem(50)
+]
 
 == Another
 #narrow[
-  #lorem(10)
-  #note[#lorem(20)
+  #lorem(10) #note[
+    #lorem(20)
     `Dictionary<waton> https://www.google.com`]
+
   #lorem(100)
 ]
 
