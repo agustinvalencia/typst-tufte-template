@@ -1,4 +1,4 @@
-#import "@preview/drafting:0.2.1": *
+#import "@preview/drafting:0.2.2": *
 
 #let note(dy: -2em, content) = {
   text(
@@ -28,7 +28,7 @@
   authors: (),
   abstract: [],
   font: "New Computer Modern",
-  mono-font: "FiraMono Nerd Font",
+  mono-font: "FiraCode Nerd Font",
   doc,
 ) = {
   set page(
@@ -48,7 +48,7 @@
         )
       }
     },
-    footer: {
+    footer: context {
       counter(page).display()
     },
   )
@@ -74,7 +74,7 @@
       #link("mailto:" + author.email)
     ])
   )
-  show raw: set text(font: mono-font, size: 8pt)
+  show raw: set text(font: mono-font, size: 7pt)
 
   set align(left)
   set heading(numbering: "1.1.1.1. ")

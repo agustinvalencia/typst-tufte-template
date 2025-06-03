@@ -19,14 +19,16 @@
       email: "name.lastname@institute.com",
     ),
   ),
+  font: "Palatino",
+  mono-font: "FiraCode Nerd Font", 
   abstract: lorem(60),
 )
 
 = Introduction
 
-#lorem(100)
+#lorem(90)
 
-$ cal(A) := { x in RR | x "is natural" } $
+$ cal(A) := { x , delta , epsilon in RR | x "is natural" } $
 
 $
   sum_(k=0)^n k
@@ -37,7 +39,7 @@ $
 #narrow[
   #lorem(30)
   #note[#lorem(20)
-    `Dictionary<waton> https://www.google.com`]
+    `Dictionary<type> https://www.google.com`]
   #lorem(50)
 ]
 
@@ -45,13 +47,27 @@ $
 #narrow[
   #lorem(10) #note[
     #lorem(20)
-    `Dictionary<waton> https://www.google.com`]
+    `Dictionary<another_type> https://www.google.com`]
 
   #lorem(100)
 ]
 
-`Dictionary<Type>(waton)=>{ return; }`
+`Dictionary<Type>(WHAAAT)=>{ return; }`
+
+=== Third level
+
+#lorem(50)
 
 = #lorem(5)
 
-#lorem(200)
+#lorem(50)
+
++ #lorem(10)
+  + #lorem(10)
++ #lorem(10)
+
+- #lorem(10)
+  - #lorem(10)
+- #lorem(10)
+
+
