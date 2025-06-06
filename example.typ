@@ -20,8 +20,9 @@
     ),
   ),
   font: "Palatino",
-  mono-font: "FiraCode Nerd Font", 
+  mono-font: "FiraCode Nerd Font",
   abstract: lorem(60),
+  bib: "bibliography.bib",
 )
 
 = Introduction
@@ -40,7 +41,7 @@ $
   #lorem(30)
   #note[#lorem(20)
     `Dictionary<type> https://www.google.com`]
-  #lorem(50)
+  #lorem(50)@Kitchenham2004
 ]
 
 == Another

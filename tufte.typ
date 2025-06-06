@@ -27,8 +27,9 @@
   title: "Untitled",
   authors: (),
   abstract: [],
-  font: "New Computer Modern",
+  font: "Palatino",
   mono-font: "FiraCode Nerd Font",
+  bib: "bibliography.bib",
   doc,
 ) = {
   set page(
@@ -74,7 +75,7 @@
       #link("mailto:" + author.email)
     ])
   )
-  show raw: set text(font: mono-font, size: 7pt)
+  show raw: set text(font: mono-font, size: 8pt)
 
   set align(left)
   set heading(numbering: "1.1.1.1. ")
@@ -83,4 +84,5 @@
   abstractblock[#abstract]
 
   doc
+  bibliography(bib)
 }
