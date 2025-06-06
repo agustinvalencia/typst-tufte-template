@@ -82,7 +82,5 @@
   set math.equation(numbering: "(1)")
 
   abstractblock[#abstract]
-
   doc
-  bibliography(bib)
 }
