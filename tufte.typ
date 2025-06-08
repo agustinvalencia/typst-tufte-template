@@ -25,7 +25,7 @@
         v(1cm)
         align(
           right + horizon,
-          header-title,
+          text(size:10pt,header-title),
         )
       }
     },
