@@ -22,7 +22,6 @@
   font: "Palatino",
   mono-font: "FiraCode Nerd Font",
   abstract: lorem(60),
-  bib: "bibliography.bib",
 )
 
 = Introduction
@@ -47,7 +46,7 @@ $
 == Another
 #narrow[
   #lorem(10) #note[
-    #lorem(20)
+    #lorem(10)
     `Dictionary<another_type> https://www.google.com`]
 
   #lorem(100)
@@ -61,9 +60,9 @@ $
 
 = #lorem(5)
 
-#lorem(50)
+#lorem(50)#inline-review(color: green, [This is an inline-review])
 
-+ #lorem(10)
++ #lorem(10)#side-review(color:red, [This is a side review] )
   + #lorem(10)
 + #lorem(10)
 
@@ -71,4 +70,4 @@ $
   - #lorem(10)
 - #lorem(10)
 
-
+#bibliography("bibliography.bib")

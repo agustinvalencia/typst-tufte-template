@@ -1,56 +1,38 @@
 #import "@preview/drafting:0.2.2": *
 
-#let note(dy: -2em, content) = {
-  text(
-    size: 9pt,
-    margin-note(
-      side: right,
-      justify: true,
-      content,
-      dy: dy,
-      page-offset-x: -4cm,
-    ),
-  )
-}
-
-#let narrow(content) = block(width: 70%, content)
-
 #let abstractblock(abstract) = context {
   block(inset: (left: 1cm, right: 1cm))[
     #v(1cm)
-    #par(justify: true, text(abstract))
+    #par(justify: true, text(size:9pt,abstract))
     #v(1cm)
   ]
 }
 
 #let tufte(
   title: "Untitled",
+  header-title: "Docs Descriptive Heading",
   authors: (),
   abstract: [],
   font: "Palatino",
   mono-font: "FiraCode Nerd Font",
-  bib: "bibliography.bib",
   doc,
 ) = {
   set page(
     paper: "us-letter",
-    margin: (
-      left: 3cm,
-      right: 2.5cm,
-      top: 3cm,
-      bottom: 2cm,
-    ),
+    margin: ( left: 3cm, right: 2.5cm, top: 3cm, bottom: 2cm),
     header: context {
       if counter(page).get().first() > 1 {
         v(1cm)
         align(
           right + horizon,
-          title,
+          header-title,
         )
       }
     },
     footer: context {
+      align(right,
       counter(page).display()
+    )
     },
   )
   set text(font: font)
@@ -75,12 +57,49 @@
       #link("mailto:" + author.email)
     ])
   )
-  show raw: set text(font: mono-font, size: 8pt)
+  show raw: set text(font: mono-font, size: 7pt)
 
   set align(left)
   set heading(numbering: "1.1.1.1. ")
   set math.equation(numbering: "(1)")
 
   abstractblock[#abstract]
-  doc
+  text(size:10pt,doc)
+}
+
+#let note(dy: -2em, dx: -4cm, content, ..args) = {
+  text(
+    size: 9pt,
+    margin-note(
+      side: right,
+      justify: true,
+      content,
+      dy: dy,
+      page-offset-x: dx,
+      ..args
+    ),
+  )
+}
+
+#let narrow(content, width: 70%) = block(width: width, content)
+
+#let inline-review(color:red, size:8pt, content, ..args) = {
+  inline-note(
+    fill: color.lighten(60%),
+    text(size:size, content),
+    ..args
+  )
+
+}
+
+#let side-review(color:red, size:8pt, dx:-4cm, content, ..args) = {
+  text(
+  size:size,
+  margin-note(
+      fill:red, 
+      stroke:red,
+      page-offset-x: dx,
+      content
+    )  
+  )
 }
