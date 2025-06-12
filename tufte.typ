@@ -67,19 +67,54 @@
   text(size:10pt,doc)
 }
 
-#let note(dy: -2em, dx: -4cm, content, ..args) = {
-  text(
-    size: 9pt,
+#let notecounter = counter("notecounter")
+#let note(dy: -2em, dx: -4cm, numbered:true, content, ..args) = {
+  let note-number-to-display = none // Will hold the number to use
+
+  if numbered {
+    notecounter.step() // Increment the counter
+    // Get the *current* state of the counter after stepping, as a content block.
+    note-number-to-display = context { notecounter.display() }
+  }
+
+  // Main text marker
+  let main-text-marker = if numbered {
+    context {
+      super(note-number-to-display) // Use the captured content for superscript
+    }
+  } else {
+    [] // No marker
+  }
+
+  // Margin note block
+  let margin-note-block = text(
+    size:9pt,
     margin-note(
-      side: right,
-      justify: true,
-      content,
-      dy: dy,
+      if numbered {
+        text(
+          size:10pt, 
+        {
+            // Use the same captured content for superscript in margin note
+            context {
+              super(note-number-to-display)
+            }
+            text(size: 9pt, " ")
+          }
+        )
+        content
+      } else {
+        content
+      }
+      ,dy:dy,
       page-offset-x: dx,
-      ..args
-    ),
+    )
   )
+
+  // Return both parts
+  (main-text-marker + margin-note-block)
 }
+
+
 
 #let narrow(content, width: 70%) = block(width: width, content)
 
