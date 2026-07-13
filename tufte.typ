@@ -1,6 +1,6 @@
 #import "@preview/drafting:0.2.2": *
 
-#let wide(content) = block(width: 100% + 5cm, content)
+#let wideblock(content) = block(width: 100% + 5cm, content)
 
 #let abstractblock(abstract) = context {
     block(inset: (left: 1cm, right: 1cm))[
@@ -70,13 +70,13 @@
     set document(title: title, author: authors.map(author => author.name))
 
     // layout
-    if date == none { date = "" }
+    let date-str = if date == none { "" } else { date.display() }
     set page(
         paper: "us-letter",
         margin: (left: 3cm, right: 2.5cm, top: 2.5cm, bottom: 2cm),
         header: context {
             if counter(page).get().first() > 1 {
-                [#date.display()  #h(1fr) #header-title]
+                [#date-str  #h(1fr) #header-title]
             }
         },
         footer: context {
@@ -95,7 +95,7 @@
     )
 
     if authors.len() > 0 { authorsblock(authors) }
-    if abstract.len() > 0 { abstractblock(abstract) }
+    if abstract != none { abstractblock(abstract) }
 
     // style
     set par(justify: true)

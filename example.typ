@@ -5,17 +5,17 @@
     authors: (
         (
             name: "Name Lastname",
-            affiliation: "Institute",
+            organization: "Institute",
             email: "name.lastname@institute.com",
         ),
         (
             name: "Name Lastname",
-            affiliation: "Institute",
+            organization: "Institute",
             email: "name.lastname@institute.com",
         ),
         (
             name: "Name Lastname",
-            affiliation: "Institute",
+            organization: "Institute",
             email: "name.lastname@institute.com",
         ),
     ),
