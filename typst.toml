@@ -1,0 +1,10 @@
+[package]
+name = "tufte"
+version = "0.1.0"
+entrypoint = "tufte.typ"
+authors = ["Agustín Valencia"]
+license = "MIT"
+description = "A Tufte-style document template for Typst — wide text column with a margin for side notes."
+repository = "https://github.com/agustinvalencia/typst-tufte-template"
+keywords = ["tufte", "template", "margin-notes", "sidenotes", "academic"]
+exclude = ["example.typ", "example.pdf", "README.md", "CLAUDE.md"]
